@@ -8,8 +8,10 @@
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
 
     <include file="lesson1/create.product.table.xml" relativeToChangelogFile="true"/>
-    <include file="lesson1/create.product_category.table.xml" relativeToChangelogFile="true"/>
     <include file="lesson1/create.category.table.xml" relativeToChangelogFile="true"/>
     <include file="lesson1/create.manufacturer.table.xml" relativeToChangelogFile="true"/>
+    <include file="lesson1/product.add.column.manufacturer.id.xml" relativeToChangelogFile="true"/>
+    <include file="lesson1/create.product_category.table.xml" relativeToChangelogFile="true"/>
+
 
 </databaseChangeLog>
