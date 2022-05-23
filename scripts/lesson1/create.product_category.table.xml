@@ -10,18 +10,18 @@
 
     <changeSet id="create_product_category_table" author="lomov.feodor">
         <createTable tableName="PRODUCT_CATEGORY">
-            <column name="PRODUCT_ID" type="BIGSERIAL">
+            <column name="PRODUCT_ID" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
-            <column name="CATEGORY_ID" type="BIGSERIAL">
-                <constraints nullable="false"/>
+            <column name="CATEGORY_ID" type="BIGINT">
+                <constraints unique="true"/>
             </column>
         </createTable>
         <addPrimaryKey tableName="PRODUCT_CATEGORY" columnNames="PRODUCT_ID, CATEGORY_ID"/>
-        <addForeignKeyConstraint baseTableName="PRODUCT_CATEGORY" baseColumnNames="PRODUCT_ID" constraintName="FOREIGN KEY"
+        <addForeignKeyConstraint baseTableName="PRODUCT_CATEGORY" baseColumnNames="PRODUCT_ID" constraintName="FK_PRODUCT_CATEGORY_PRODUCT"
                                  referencedTableName="PRODUCT"
                                  referencedColumnNames="ID"/>
-        <addForeignKeyConstraint baseTableName="PRODUCT_CATEGORY" baseColumnNames="CATEGORY_ID" constraintName="FOREIGN KEY"
+        <addForeignKeyConstraint baseTableName="PRODUCT_CATEGORY" baseColumnNames="CATEGORY_ID" constraintName="FK_PRODUCT_CATEGORY_CATEGORY"
                                  referencedTableName="CATEGORY"
                                  referencedColumnNames="ID"/>
 
